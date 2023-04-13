@@ -61,6 +61,6 @@ RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-v", "--", "/usr/local/bin/docker-entrypoint"]
 
 WORKDIR $HOME
-
-CMD ["vncstart", "0", "xfce4-terminal", "--wait"]
 CMD ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+CMD ["vncstart", "0", "xfce4-terminal", "--wait"]
+
