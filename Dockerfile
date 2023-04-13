@@ -37,7 +37,7 @@ RUN set -ex \
 	# python modules
 	&& pip3 install --upgrade pyyaml \
 	# vnc server
-	&& wget -qO- https://dl.bintray.com/tigervnc/stable/tigervnc-${TIGERVNC_VERSION}.x86_64.tar.gz | tar xz --strip 1 -C / \
+	&& wget -qO- https://sourceforge.net/projects/tigervnc/files/stable/1.9.0/tigervnc-1.9.0.x86_64.tar.gz | tar xz --strip 1 -C / \
 	# docker cli & docker-compose (for docker in docker purposes)
 	&& curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
 	&& add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
